@@ -40,10 +40,17 @@ function menuMaker(array) {
 
   const menu = document.createElement('div');
   const list = document.createElement('ul');
+  menu.appenedChild(list);
 
   array.forEach(item => {
     const listItem = document.createElement('li');
     listItem.textContent = item;
     list.appendChild(listItem);
   });
+
+  menuButton.addEventListener('click', (event) => {
+    menu.classList.toggle('menu--open');
+  });
+
+  return menu;
 }
