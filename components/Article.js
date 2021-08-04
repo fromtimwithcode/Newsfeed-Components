@@ -113,15 +113,25 @@ import data from '../data/data.js';
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParagraph }) {
 
-function articleMaker({ article }) {
-  const articleDiv = document.createElement('div');
-  const title = document.createElement('h2');
-  const date = document.createElement('p');
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p.date');
   const p1 = document.createElement('p');
   const p2 = document.createElement('p');
   const p3 = document.createElement('p');
   const expandButton = document.createElement('span');
+
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(p1);
+  article.appendChild(p2);
+  article.appendChild(p3);
+
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  expandButton.classList.add('expandButton');
 
   expandButton.addEventListener('click', (event) => {
     articleDiv.classList.toggle('article-open');
