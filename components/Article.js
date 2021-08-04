@@ -126,4 +126,6 @@ function articleMaker({ article }) {
   expandButton.addEventListener('click', (event) => {
     articleDiv.classList.toggle('article-open');
   });
+
+  return article;
 }
