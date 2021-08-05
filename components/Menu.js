@@ -40,7 +40,7 @@ function menuMaker(array) {
 
   const menu = document.createElement('div');
   const list = document.createElement('ul');
-  menu.appenedChild(list);
+  menu.appendChild(list);
 
   array.forEach(item => {
     const listItem = document.createElement('li');
@@ -48,9 +48,13 @@ function menuMaker(array) {
     list.appendChild(listItem);
   });
 
+  menu.classList.add('menu');
+
   menuButton.addEventListener('click', (event) => {
     menu.classList.toggle('menu--open');
   });
 
   return menu;
 }
+
+header.appendChild(menuMaker(menuItems));
